@@ -30,8 +30,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Room::factory(9)->create();
-        
 
+        $this->call([
+            RoomUserSeeder::class,
+        ]);
+        
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
