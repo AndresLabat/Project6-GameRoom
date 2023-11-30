@@ -28,6 +28,9 @@
 # Eliminar las migraciones de la base de datos:
     php artisan migrate:rollback
 
+# Eliminar migraciones y volver a ejecutarlas:
+    php artisan migrate:fresh 
+
 ## SEEDERS:
 
 # Crear un archivo seed:
