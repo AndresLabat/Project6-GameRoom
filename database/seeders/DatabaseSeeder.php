@@ -25,10 +25,11 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Game::factory(9)->create();
 
-        // $this->call([
-        //     RoomSeeder::class,
-        // ]);
+        $this->call([
+            RoomSeeder::class,
+        ]);
 
+        \App\Models\Room::factory(9)->create();
         
 
         // \App\Models\User::factory()->create([
