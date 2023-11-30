@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->unique()->require();
+            $table->string('name', 100)->unique()->nullable(false);
             $table->enum('category', ["action", "RPG", "shooter", "adventure"]);
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users");
