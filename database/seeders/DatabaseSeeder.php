@@ -19,6 +19,18 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory(7)->create();
 
+        $this->call([
+            GameSeeder::class,
+        ]);
+
+        \App\Models\Game::factory(9)->create();
+
+        // $this->call([
+        //     RoomSeeder::class,
+        // ]);
+
+        
+
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
