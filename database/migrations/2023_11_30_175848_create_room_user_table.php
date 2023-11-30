@@ -10,7 +10,12 @@ return new class extends Migration
     {
         Schema::create('room_user', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users");
+            $table->unsignedBigInteger("room_id");
+            $table->foreign("room_id")->references("id")->on("rooms");
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
