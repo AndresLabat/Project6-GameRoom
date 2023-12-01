@@ -47,3 +47,10 @@ Route::post('/room', [RoomController::class, 'createRoom']);
 Route::put('/room', [RoomController::class, 'updateRoom']);
 Route::delete('/delete', [RoomController::class, 'deleteRoom']);
 
+// ROOM_USER
+Route::get('/members-room', [Room_userController::class, 'getMembersRoom']);
+Route::get('/rooms-user', [Room_userController::class, 'getRoomsUser']);
+Route::create('/room-user', [Room_userController::class, 'createRoomUser']);
+Route::update('/room-user', [Room_userController::class, 'updateRoomUser']);
+Route::delete('/room-user', [Room_userController::class, 'deleteRoomUser']);
+
