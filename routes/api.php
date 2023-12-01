@@ -36,3 +36,9 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::put('/user', [UserController::class, 'updateProfile']);
 Route::delete('/user', [UserController::class, 'deleteUser']);
+
+// GAMES
+Route::get('/games', [GameController::class, 'getAllGames']);
+Route::get('/game', [GameController::class, 'getGameById']);
+
+
