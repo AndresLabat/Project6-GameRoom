@@ -41,4 +41,9 @@ Route::delete('/user', [UserController::class, 'deleteUser']);
 Route::get('/games', [GameController::class, 'getAllGames']);
 Route::get('/game', [GameController::class, 'getGameById']);
 
+// ROOMS
+Route::get('/room', [RoomController::class, 'getRoomById']);
+Route::post('/room', [RoomController::class, 'createRoom']);
+Route::put('/room', [RoomController::class, 'updateRoom']);
+Route::delete('/delete', [RoomController::class, 'deleteRoom']);
 
