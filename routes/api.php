@@ -61,3 +61,9 @@ Route::post('/message', [MessageController::class, 'createMessage']);
 Route::put('/message', [MessageController::class, 'updatedMessage']);
 Route::delete('/message', [MessageController::class, 'deleteMessage']);
 
+// SUPER_ADMIN
+Route::create('/game', [Super_adminController::class, 'createGame']);
+Route::update('/game', [Super_adminController::class, 'updateGame']);
+Route::delete('/game', [Super_adminController::class, 'deleteGame']);
+Route::get('/rooms', [Super_adminController::class, 'getAllRooms']);
+Route::get('/users', [Super_adminController::class, 'getAllUsers']);
