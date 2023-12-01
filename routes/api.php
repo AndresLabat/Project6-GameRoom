@@ -54,3 +54,10 @@ Route::create('/room-user', [Room_userController::class, 'createRoomUser']);
 Route::update('/room-user', [Room_userController::class, 'updateRoomUser']);
 Route::delete('/room-user', [Room_userController::class, 'deleteRoomUser']);
 
+// MESSAGES
+Route::get('/messages', [MessageController::class, 'roomChat']);
+Route::get('/message', [MessageController::class, 'getMessage']);
+Route::post('/message', [MessageController::class, 'createMessage']);
+Route::put('/message', [MessageController::class, 'updatedMessage']);
+Route::delete('/message', [MessageController::class, 'deleteMessage']);
+
