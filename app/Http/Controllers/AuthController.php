@@ -156,16 +156,28 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $accessToken = $request->bearerToken();
-        $token = PersonalAccessToken::findToken($accessToken);
-        $token->delete();
-        
-        return response()->json(
-            [
-                "success" => true,
-                "message" => "Logout successfully"
-            ],
-            Response::HTTP_OK
-        );
+        try {
+            $accessToken = $request->bearerToken();
+            $token = PersonalAccessToken::findToken($accessToken);
+            $token->delete();
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Logout successfully"
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error in logout"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
     }
 }
