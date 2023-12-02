@@ -148,8 +148,10 @@ class RoomController extends Controller
     public function deleteRoom(Request $request, $id)
     {
         try {
-
+            $user = auth()->user();
+            
             $room = Room::query()->find($id);
+
 
             if (!$room) {
                 return response()->json([
@@ -158,7 +160,6 @@ class RoomController extends Controller
                 ], Response::HTTP_BAD_REQUEST);
             }
 
-            $user = auth()->user();
             $room->room_userManyToMany()->detach($user->id);
 
             Room::destroy($id);
