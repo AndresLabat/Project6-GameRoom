@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\Super_adminController;
+use App\Http\Controllers\Room_userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +29,6 @@ Route::get('/api', function (Request $request) {
         Response::HTTP_OK
     );
 });
-
-// solo los usuarios autenticados podrán acceder a esa ruta. 
-// Cuando un usuario autenticado realiza una solicitud a esta ruta, 
-// se espera que el servidor devuelva la información del usuario actual.
-
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
 
 // USERS
 Route::post('/register', [AuthController::class, 'register']);
