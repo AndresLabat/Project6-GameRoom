@@ -1,0 +1,130 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Users",
+    "dateExported": "2023-12-02T13:43:26.365Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c3ee9337-b9cf-4c8e-bf8e-bda99ba04621",
+            "colId": "d650c9fd-a4bb-47ea-a4fa-7f77a7dfcdfa",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:8000/api/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-12-02T11:48:58.745Z",
+            "modified": "2023-12-02T11:48:58.745Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"name\": \"vin\",\r\n  \"nickname\": \"el amos\",\r\n  \"email\": \"vincents@gmail.com\",\r\n  \"password\": \"Aa1234\",\r\n  \"photo\": \"photoprueba\"\r\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "36bd5d31-5ebd-4e54-80ff-f7a3d6f464b7",
+            "colId": "d650c9fd-a4bb-47ea-a4fa-7f77a7dfcdfa",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:8000/api/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-12-02T12:18:13.416Z",
+            "modified": "2023-12-02T12:18:13.416Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"vincents@gmail.com\",\n  \"password\": \"Aa1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5684c667-e16a-4a47-9994-8eb9ea97b7b2",
+            "colId": "d650c9fd-a4bb-47ea-a4fa-7f77a7dfcdfa",
+            "containerId": "",
+            "name": "Profile",
+            "url": "http://localhost:8000/api/profile",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-12-02T12:25:58.349Z",
+            "modified": "2023-12-02T12:49:50.161Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "4|BzmsqN6cLXEBvSsZm77Z1F5uvnmGr3xwzKUMGzArd1653079"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7cd31470-fda9-43be-983d-8b3e69f1e2ac",
+            "colId": "d650c9fd-a4bb-47ea-a4fa-7f77a7dfcdfa",
+            "containerId": "",
+            "name": "Logout",
+            "url": "http://localhost:8000/api/logout",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-12-02T12:31:08.428Z",
+            "modified": "2023-12-02T12:31:08.428Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|7JrObeg63O0OaURDszcp350ZHnEFqM05sQNdjm4C27082777"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7a94ed74-8963-4d1a-8708-4adfb7c8e84a",
+            "colId": "d650c9fd-a4bb-47ea-a4fa-7f77a7dfcdfa",
+            "containerId": "",
+            "name": "UpdateProfile",
+            "url": "http://localhost:8000/api/user",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-12-02T13:32:01.835Z",
+            "modified": "2023-12-02T13:32:01.835Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Vin Diesel\",\n  \"nickname\": \"apatrullando la ciudad\",\n  \"email\": \"vincentDiesel@gmail.com\",\n  \"password\": \"Aa1234\",\n  \"photo\": \"photoprueba2\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "3|M4WLEVYhKY2fUv5sDLstWJPftLCyjFpN78XXSS2a7f403d95"
+            },
+            "tests": []
+        },
+        {
+            "_id": "64d692ab-3588-49e8-b227-4473c293818d",
+            "colId": "d650c9fd-a4bb-47ea-a4fa-7f77a7dfcdfa",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://localhost:8000/api/user",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-12-02T13:40:24.660Z",
+            "modified": "2023-12-02T13:40:24.660Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "5|5fs9Gaj90ulAwIkLefgj9aDcKR1MNbyHw7YU8aENecae5650"
+            },
+            "tests": []
+        }
+    ]
+}
