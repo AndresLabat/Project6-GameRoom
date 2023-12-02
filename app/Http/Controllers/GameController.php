@@ -27,7 +27,7 @@ class GameController extends Controller
             return response()->json(
                 [
                     "success" => true,
-                    "message" => "User",
+                    "message" => "Games obtained succesfully",
                     "data" => $games
                 ],
                 Response::HTTP_OK
@@ -39,7 +39,44 @@ class GameController extends Controller
             return response()->json(
                 [
                     "success" => false,
-                    "message" => "Error updating profile user"
+                    "message" => "Error obtaining the games"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+
+    public function getGameById(Request $request,$id)
+    {
+        try {
+            $game = Game::query()->find($id);
+
+            if(!$game){
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "Game doesn't exist", 
+                    ],
+                    Response::HTTP_OK
+                ); 
+            }
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Game obtained succesfully",
+                    "data" => $game
+                ],
+                Response::HTTP_OK
+            );
+
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error obtaining the game"
                 ],
                 Response::HTTP_INTERNAL_SERVER_ERROR
             );

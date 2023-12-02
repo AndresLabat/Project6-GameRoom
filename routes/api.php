@@ -46,7 +46,7 @@ Route::delete('/user', [UserController::class, 'deleteUser']);
 
 // // GAMES
 Route::get('/games', [GameController::class, 'getAllGames']);
-Route::get('/game', [GameController::class, 'getGameById']);
+Route::get('/game/{id}', [GameController::class, 'getGameById']);
 
 // // ROOMS
 Route::group([
