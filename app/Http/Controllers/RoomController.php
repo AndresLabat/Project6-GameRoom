@@ -138,7 +138,7 @@ class RoomController extends Controller
                     ],
                     Response::HTTP_OK
                 );
-            }else{
+            } else {
                 return response()->json(
                     [
                         "success" => true,
@@ -165,6 +165,7 @@ class RoomController extends Controller
         try {
             $user = auth()->user();
             $room = Room::query()->find($id);
+            $userRoom = Room_user::query()->where('room_id', $id)->first();
 
             if (!$room) {
                 return response()->json([
@@ -173,24 +174,35 @@ class RoomController extends Controller
                 ], Response::HTTP_BAD_REQUEST);
             }
 
-            $room->room_userManyToMany()->detach($user->id);
+            if ($userRoom->user_id ===  $user->id) {
+                $room->room_userManyToMany()->detach($user->id);
 
-            Room::destroy($id);
+                Room::destroy($id);
 
-            return response()->json(
-                [
-                    "success" => true,
-                    "message" => "Room deleted"
-                ],
-                Response::HTTP_OK
-            );
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "Room deleted"
+                    ],
+                    Response::HTTP_OK
+                );
+            } else {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "You are not the owner of this room"
+                    ],
+                    Response::HTTP_OK
+                );
+            }
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
 
             return response()->json(
                 [
                     "success" => false,
-                    "message" => "Error obtaining a room"
+                    "message" => "Error obtaining a room",
+                    "data" => $userRoom
                 ],
                 Response::HTTP_INTERNAL_SERVER_ERROR
             );
