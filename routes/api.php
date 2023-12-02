@@ -52,9 +52,9 @@ Route::get('/game/{id}', [GameController::class, 'getGameById']);
 Route::group([
     'middleware' => ['auth:sanctum']
 ], function () {
-Route::get('/room', [RoomController::class, 'getRoomById']);
+Route::get('/room/{id}', [RoomController::class, 'getRoomById']);
 Route::post('/room', [RoomController::class, 'createRoom']);
-Route::put('/room', [RoomController::class, 'updateRoom']);
+Route::put('/room/{id}', [RoomController::class, 'updateRoom']);
 Route::delete('/delete', [RoomController::class, 'deleteRoom']);
 });
 
