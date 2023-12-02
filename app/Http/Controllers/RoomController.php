@@ -149,8 +149,6 @@ class RoomController extends Controller
     public function deleteRoom(Request $request, $id)
     {
         try {
-
-         
             Room::destroy($id);
 
             return response()->json(
@@ -171,7 +169,5 @@ class RoomController extends Controller
                 Response::HTTP_INTERNAL_SERVER_ERROR
             );
         }
-
     }
-
 }
