@@ -68,7 +68,7 @@ class RoomController extends Controller
 
             $newRoom = Room::create(
                 [
-                    "name" => $request->input('name'), 
+                    "name" => $request->input('name'),
                     "game_id" => $request->input('game_id')
                 ]
             );
@@ -97,7 +97,7 @@ class RoomController extends Controller
         }
     }
 
-    public function updateRoom(Request $request,$id )
+    public function updateRoom(Request $request, $id)
     {
         try {
             $room = Room::query()->find($id);
@@ -122,17 +122,16 @@ class RoomController extends Controller
                 $room->game_id = $game_id;
             }
 
-            $room-> save();
+            $room->save();
 
             return response()->json(
                 [
                     "success" => true,
                     "message" => "Room updated",
-                    "data"=> $room
+                    "data" => $room
                 ],
                 Response::HTTP_OK
             );
-            
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
 
@@ -149,12 +148,25 @@ class RoomController extends Controller
     public function deleteRoom(Request $request, $id)
     {
         try {
+
+            $room = Room::query()->find($id);
+
+            if (!$room) {
+                return response()->json([
+                    "success" => true,
+                    "message" => "Room doesn't exist"
+                ], Response::HTTP_BAD_REQUEST);
+            }
+
+            $user = auth()->user();
+            $room->room_userManyToMany()->detach($user->id);
+
             Room::destroy($id);
 
             return response()->json(
                 [
                     "success" => true,
-                    "message" => "Room deleted" 
+                    "message" => "Room deleted"
                 ],
                 Response::HTTP_OK
             );
