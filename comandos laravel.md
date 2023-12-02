@@ -56,3 +56,8 @@
 
 # Crear el archivo que almacena los controlladores:
     php artisan make:controller NombreDelControlador
+
+
+/--------------------------------------
+COSAS PARA HACER (TODO):
+- ABSTRACCION DE VALIDACIONES
