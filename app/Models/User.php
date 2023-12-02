@@ -18,18 +18,18 @@ class User extends Authenticatable
         'name',
         'nickname',
         'email',
-        'password', 
+        'password',
         'photo',
         'role',
         'timestamps',
-    ]; 
+    ];
 
-    protected $hidden = [   
+    protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    public function games():HasMany
+    public function games(): HasMany
     {
         return $this->hasMany(Game::class);
     }
@@ -44,4 +44,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Room::class, 'messages');
     }
 
+    public function rooms()
+    {
+        return $this->belongsToMany(Room::class, 'room_user', 'user_id', 'room_id');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

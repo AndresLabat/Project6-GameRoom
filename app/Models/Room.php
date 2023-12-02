@@ -26,13 +26,21 @@ class Room extends Model
 
     public function room_userManyToMany(): BelongsToMany
     {
-        return $this->belongsToMany(User::class,'room_user');
+        return $this->belongsToMany(User::class, 'room_user');
     }
 
     public function messageToUser(): BelongsToMany
     {
-        return $this->belongsToMany(User::class,'messages');
+        return $this->belongsToMany(User::class, 'messages');
     }
 
-   
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'room_user', 'room_id', 'user_id');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

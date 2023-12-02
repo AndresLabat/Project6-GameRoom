@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
-use Laravel\Sanctum\PersonalAccessToken;
 use Symfony\Component\HttpFoundation\Response;
 
 
@@ -53,21 +50,21 @@ class RoomController extends Controller
     public function createRoom(Request $request)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                'name' => 'required|min:3|max:100',
-                'game_id' => 'required|exists:games,id'
-            ]);
+            // $validator = Validator::make($request->all(), [
+            //     'name' => 'required|min:3|max:100',
+            //     'game_id' => 'required|exists:games,id'
+            // ]);
 
-            if ($validator->fails()) {
-                return response()->json(
-                    [
-                        "success" => true,
-                        "message" => "Error creating a room",
-                        "error" => $validator->errors()
-                    ],
-                    Response::HTTP_BAD_REQUEST
-                );
-            }
+            // if ($validator->fails()) {
+            //     return response()->json(
+            //         [
+            //             "success" => true,
+            //             "message" => "Error creating a room",
+            //             "error" => $validator->errors()
+            //         ],
+            //         Response::HTTP_BAD_REQUEST
+            //     );
+            // }
 
             $newRoom = Room::create(
                 [

@@ -44,11 +44,11 @@ Route::put('/user', [UserController::class, 'updateProfile']);
 Route::delete('/user', [UserController::class, 'deleteUser']);
 });
 
-// // GAMES
+// GAMES
 Route::get('/games', [GameController::class, 'getAllGames']);
 Route::get('/game/{id}', [GameController::class, 'getGameById']);
 
-// // ROOMS
+// ROOMS
 Route::group([
     'middleware' => ['auth:sanctum']
 ], function () {
@@ -58,7 +58,7 @@ Route::put('/room/{id}', [RoomController::class, 'updateRoom']);
 Route::delete('/room/{id}', [RoomController::class, 'deleteRoom']);
 });
 
-// // ROOM_USER
+// ROOM_USER
 Route::group([
     'middleware' => ['auth:sanctum']
 ], function () {
@@ -69,7 +69,7 @@ Route::put('/room-user', [Room_userController::class, 'updateRoomUser']);
 Route::delete('/room-user', [Room_userController::class, 'deleteRoomUser']);
 });
 
-// // MESSAGES
+// MESSAGES
 Route::group([
     'middleware' => ['auth:sanctum']
 ], function () {
@@ -80,7 +80,7 @@ Route::put('/message', [MessageController::class, 'updatedMessage']);
 Route::delete('/message', [MessageController::class, 'deleteMessage']);
 });
 
-// // SUPER_ADMIN
+// SUPER_ADMIN
 Route::group([
     'middleware' => ['auth:sanctum', 'is_super_admin']
 ], function () {
