@@ -1,0 +1,91 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Rooms",
+    "dateExported": "2023-12-02T17:51:26.124Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "75d52ae5-a52a-40c5-866c-faf6fef930a0",
+            "colId": "2b9cd0dc-c0e6-477e-9214-c3d1c6f78bd6",
+            "containerId": "",
+            "name": "getRoomById",
+            "url": "http://localhost:8000/api/room/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-12-02T15:05:41.266Z",
+            "modified": "2023-12-02T16:50:21.494Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "3|YBL598cUOoVm80LqGrBuwMQieGCYzGyqI4uqXSAQ03af7d9f"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a01fc72f-7da0-482d-b93b-fb93beca9b18",
+            "colId": "2b9cd0dc-c0e6-477e-9214-c3d1c6f78bd6",
+            "containerId": "",
+            "name": "Create",
+            "url": "http://localhost:8000/api/room",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-12-02T16:11:48.808Z",
+            "modified": "2023-12-02T17:03:01.101Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"hola\",\n  \"game_id\":1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|gRE9Z3ki17XhXGtDqWutwZqOrR3fiXzM9l9ni1Ee1e394c42"
+            },
+            "tests": []
+        },
+        {
+            "_id": "3ac600a6-512f-4a78-b560-fb865d951851",
+            "colId": "2b9cd0dc-c0e6-477e-9214-c3d1c6f78bd6",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://localhost:8000/api/room/2",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-12-02T17:21:47.489Z",
+            "modified": "2023-12-02T17:26:28.652Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Las s\",\n  \"game_id\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|5qyYuWicIm0P0RVNelLjZBhKWmN35EPJE4FzalVPc3c2f0fe"
+            },
+            "tests": []
+        },
+        {
+            "_id": "06e384fc-1ed8-42d6-a245-b71ea4d284a8",
+            "colId": "2b9cd0dc-c0e6-477e-9214-c3d1c6f78bd6",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://localhost:8000/api/room/2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-12-02T17:30:28.614Z",
+            "modified": "2023-12-02T17:34:17.492Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|and9HLxELLOYbRWvrwIQ8dPDKVm97KfWBQaOsIOmcea3ccb5"
+            },
+            "tests": []
+        }
+    ]
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Models\Room_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
@@ -100,38 +101,52 @@ class RoomController extends Controller
     public function updateRoom(Request $request, $id)
     {
         try {
+            $user = auth()->user();
             $room = Room::query()->find($id);
+            $userRoom = Room_user::query()->where('room_id', $id)->first();
 
             if (!$room) {
                 return response()->json(
                     [
                         "success" => true,
                         "message" => "Room doesnt exists"
+
                     ],
                     Response::HTTP_BAD_REQUEST
                 );
             };
 
-            $name = $request->input('name');
-            $game_id = $request->input('game_id');
+            if ($userRoom->user_id ===  $user->id) {
+                $name = $request->input('name');
+                $game_id = $request->input('game_id');
 
-            if ($request->has('name')) {
-                $room->name = $name;
+                if ($request->has('name')) {
+                    $room->name = $name;
+                }
+                if ($request->has('game_id')) {
+                    $room->game_id = $game_id;
+                }
+
+                $room->save();
+
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "Room updated",
+                        "data" => $room,
+                        "patata" => $userRoom
+                    ],
+                    Response::HTTP_OK
+                );
+            }else{
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "You are not the owner of this room"
+                    ],
+                    Response::HTTP_OK
+                );
             }
-            if ($request->has('game_id')) {
-                $room->game_id = $game_id;
-            }
-
-            $room->save();
-
-            return response()->json(
-                [
-                    "success" => true,
-                    "message" => "Room updated",
-                    "data" => $room
-                ],
-                Response::HTTP_OK
-            );
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
 
@@ -149,9 +164,7 @@ class RoomController extends Controller
     {
         try {
             $user = auth()->user();
-            
             $room = Room::query()->find($id);
-
 
             if (!$room) {
                 return response()->json([
