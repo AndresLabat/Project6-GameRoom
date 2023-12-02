@@ -50,55 +50,55 @@ class RoomController extends Controller
         }
     }
 
-    // public function createRoom(Request $request)
-    // {
-    //     // try {
-    //         // $validator = Validator::make($request->all(), [
-    //         //     'name' => 'required|min:3|max:100',
-    //         //     'game_id' => 'required|exists:games,id'
-    //         // ]);
+    public function createRoom(Request $request)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|min:3|max:100',
+                'game_id' => 'required|exists:games,id'
+            ]);
 
-    //         // if ($validator->fails()) {
-    //         //     return response()->json(
-    //         //         [
-    //         //             "success" => true,
-    //         //             "message" => "Error creating a room",
-    //         //             "error" => $validator->errors()
-    //         //         ],
-    //         //         Response::HTTP_BAD_REQUEST
-    //         //     );
-    //         // }
+            if ($validator->fails()) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "Error creating a room",
+                        "error" => $validator->errors()
+                    ],
+                    Response::HTTP_BAD_REQUEST
+                );
+            }
 
-    //         // $newRoom = Room::create(
-    //         //     [
-    //         //         "name" => $request->input('name'), 
-    //         //         "game_id" => $request->input('game_id')
-    //         //     ]
-    //         // );
+            $newRoom = Room::create(
+                [
+                    "name" => $request->input('name'), 
+                    "game_id" => $request->input('game_id')
+                ]
+            );
 
-    //         // $user = auth()->user();
-    //         // $newRoom->room_userManyToMany()->attach($user->id);
+            $user = auth()->user();
+            $newRoom->room_userManyToMany()->attach($user->id);
 
-    //         // return response()->json(
-    //         //     [
-    //         //         "success" => true,
-    //         //         "message" => "Room created successfully",
-    //         //         "data" => $newRoom
-    //         //     ],
-    //         //     Response::HTTP_CREATED
-    //         // );
-    //     // } catch (\Throwable $th) {
-    //     //     Log::error($th->getMessage());
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Room created successfully",
+                    "data" => $newRoom
+                ],
+                Response::HTTP_CREATED
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
 
-    //     //     return response()->json(
-    //     //         [
-    //     //             "success" => false,
-    //     //             "message" => "Error creating a room"
-    //     //         ],
-    //     //         Response::HTTP_INTERNAL_SERVER_ERROR
-    //     //     );
-    //     // }
-    // }
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error creating a room"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
 
     public function updateRoom(Request $request,$id )
     {
@@ -149,9 +149,31 @@ class RoomController extends Controller
         }
     }
 
-    // public function deleteRoom(Request $request)
-    // {
+    public function deleteRoom(Request $request, $id)
+    {
+        try {
+            $deleteRoom = Room::destroy($id);
 
-    // }
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Room deleted",
+                    "data" => $deleteRoom
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            // Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error obtaining a room"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+
+    }
 
 }
