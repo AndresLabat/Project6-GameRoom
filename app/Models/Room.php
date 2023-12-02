@@ -15,6 +15,7 @@ class Room extends Model
 
     protected $fillable = [
         'name',
+        'game_id',
         'is_active',
         'timestamps',
     ];
