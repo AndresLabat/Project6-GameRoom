@@ -59,15 +59,45 @@ class Room_userController extends Controller
             );
         }
     }
-}
 
-    // public function getRoomsUser(Request $request, $id){
-    //     try {
-     
-    //     } catch (\Throwable $th) {
-           
-    //     }
-    // }
+
+    public function getRoomsUser(Request $request)
+    {
+        try {
+            $user = auth()->user();
+            $room_user = Room_user::query()->where('user_id', $user->id)->get();
+
+            if ($room_user->isEmpty()) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "This user does not have any rooms."
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Rooms obtained succesfully",
+                    "data" => $room_user
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error obtaining the rooms"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+}
 
     // public function createRoomUser(Request $request, $id){
     //     try {
