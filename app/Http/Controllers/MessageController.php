@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Message;
-use App\Models\Room;
+use App\Models\Message; 
 use App\Models\Room_user;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log; 
 use Symfony\Component\HttpFoundation\Response;
 
 class MessageController extends Controller
