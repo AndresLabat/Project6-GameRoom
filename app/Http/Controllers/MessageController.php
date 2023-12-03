@@ -62,4 +62,50 @@ class MessageController extends Controller
             );
         }
     }
+
+    public function createMessage(Request $request)
+    {
+        try {
+            $user = auth()->user();
+            $room_id = $request->input('room_id');
+            $user_room = Room_user::query()->where('user_id', $user->id)->where('room_id', $room_id)->first();
+
+            if (!$user_room) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "You are not a member of this chat"
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+
+            $message = Message::query()->create([
+                'user_id' => $user->id,
+                'room_id' => $room_id,
+                'message' => $request->input('message')
+            ]);
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Message created succesfully",
+                    "data" => $message
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error obtaining a chat room"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+
+
 }
