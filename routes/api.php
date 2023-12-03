@@ -85,7 +85,7 @@ Route::group([
     'middleware' => ['auth:sanctum', 'is_super_admin']
 ], function () {
 Route::post('/game', [Super_adminController::class, 'createGame']);
-Route::put('/game', [Super_adminController::class, 'updateGame']);
+Route::put('/game/{id}', [Super_adminController::class, 'updateGame']);
 Route::delete('/game', [Super_adminController::class, 'deleteGame']);
 Route::get('/rooms', [Super_adminController::class, 'getAllRooms']);
 Route::get('/users', [Super_adminController::class, 'getAllUsers']);
