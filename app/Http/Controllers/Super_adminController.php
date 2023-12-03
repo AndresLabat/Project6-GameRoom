@@ -70,13 +70,12 @@ class Super_adminController extends Controller
         }
     }
 
-
     public function updateGame(Request $request, $id)
     {
         try {
 
             $user = auth()->user();
-            
+
             if ($user->role != "super_admin") {
                 return response()->json(
                     [
@@ -109,17 +108,17 @@ class Super_adminController extends Controller
                 );
             }
 
-                if ($request->has('name')) {
-                    $game->name = $name;
-                }
-                if ($request->has('category')) {
-                    $game->category = $category;
-                }
-                if ($request->has('user_id')) {
-                    $game->user_id = $user_id;
-                }
+            if ($request->has('name')) {
+                $game->name = $name;
+            }
+            if ($request->has('category')) {
+                $game->category = $category;
+            }
+            if ($request->has('user_id')) {
+                $game->user_id = $user_id;
+            }
 
-                $game->save();
+            $game->save();
 
             return response()->json(
                 [
@@ -129,6 +128,58 @@ class Super_adminController extends Controller
                 ],
                 Response::HTTP_CREATED
             );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error updating a game"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+    
+    public function deleteGame(Request $request, $id)
+    {
+        try {
+
+            $user = auth()->user();
+
+            if ($user->role != "super_admin") {
+                return response()->json(
+                    [
+                        "success" => false,
+                        "message" => "You are not an super admin"
+                    ],
+                    Response::HTTP_UNAUTHORIZED
+                );
+            }
+
+            $game = Game::query()->find($id);
+
+            if ($game) {
+
+                Game::destroy($id);
+
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "Game deleted successfully"
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Game not exist"
+                ],
+                Response::HTTP_OK
+            );
+
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
 

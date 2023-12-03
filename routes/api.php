@@ -86,7 +86,7 @@ Route::group([
 ], function () {
 Route::post('/game', [Super_adminController::class, 'createGame']);
 Route::put('/game/{id}', [Super_adminController::class, 'updateGame']);
-Route::delete('/game', [Super_adminController::class, 'deleteGame']);
+Route::delete('/game/{id}', [Super_adminController::class, 'deleteGame']);
 Route::get('/rooms', [Super_adminController::class, 'getAllRooms']);
 Route::get('/users', [Super_adminController::class, 'getAllUsers']);
 });
