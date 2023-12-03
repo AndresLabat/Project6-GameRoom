@@ -1,0 +1,109 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "SuperAdmin",
+    "dateExported": "2023-12-03T22:30:57.822Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b9d4c2a5-0926-4d1e-a4e5-886c403b69ef",
+            "colId": "77457a72-663a-41f8-a227-8ee17df8d69b",
+            "containerId": "",
+            "name": "createGames",
+            "url": "http://localhost:8000/api/game",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-12-03T19:14:41.803Z",
+            "modified": "2023-12-03T19:44:14.857Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Zelda\",\n  \"category\":\"adventure\",\n  \"user_id\":13\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "31|vJyLzrTj6AHTPeCkspMlD0SLZzFHXXGQGTojhV3cdf3fd211"
+            },
+            "tests": []
+        },
+        {
+            "_id": "96a05e3f-67eb-41e2-b88c-cfefdc96f7b1",
+            "colId": "77457a72-663a-41f8-a227-8ee17df8d69b",
+            "containerId": "",
+            "name": "updateGames",
+            "url": "http://localhost:8000/api/game/11",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-12-03T19:51:18.750Z",
+            "modified": "2023-12-03T20:07:14.077Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Vincen\",\n  \"category\":\"adventure\",\n  \"user_id\":13\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "32|aJyUYMA3MbmcLp5uUrb6tDefdjRycf2fOEyTkIGpcd904791"
+            },
+            "tests": []
+        },
+        {
+            "_id": "73e1c667-b2a0-4934-b4eb-a80f479d5b44",
+            "colId": "77457a72-663a-41f8-a227-8ee17df8d69b",
+            "containerId": "",
+            "name": "deleteGame",
+            "url": "http://localhost:8000/api/game/10",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-12-03T20:16:04.985Z",
+            "modified": "2023-12-03T20:17:10.725Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "33|asfR7wjUnAKA56QEPgHhDl3v1tcWZSiDWD1sZ4V569d4eb93"
+            },
+            "tests": []
+        },
+        {
+            "_id": "5be5923d-3af0-449f-85dd-00876d06b6f5",
+            "colId": "77457a72-663a-41f8-a227-8ee17df8d69b",
+            "containerId": "",
+            "name": "getAllRooms",
+            "url": "http://localhost:8000/api/rooms",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-12-03T20:25:52.034Z",
+            "modified": "2023-12-03T20:27:12.371Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "34|yWnTZigsdtdfaHZuVcdTs7hrz0venq6otNPfQI1z09ae3f30"
+            },
+            "tests": []
+        },
+        {
+            "_id": "299267aa-3d26-4578-b0ec-f6273161d1b8",
+            "colId": "77457a72-663a-41f8-a227-8ee17df8d69b",
+            "containerId": "",
+            "name": "getAllUsers",
+            "url": "http://localhost:8000/api/users",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-12-03T20:30:15.016Z",
+            "modified": "2023-12-03T20:33:21.172Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "34|yWnTZigsdtdfaHZuVcdTs7hrz0venq6otNPfQI1z09ae3f30"
+            },
+            "tests": []
+        }
+    ]
+}
