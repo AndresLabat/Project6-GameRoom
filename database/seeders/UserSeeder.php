@@ -15,24 +15,24 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => Str::random(30),
             'nickname' => Str::random(30),
-            'email' => Str::random(30) . '@example.com',
-            'password' => Hash::make('password'),
+            'email' => Str::random(30) . '@example.com', 
+            'password' => Hash::make('Aa1234'),
             'role' => 'super_admin',
         ]);
 
         DB::table('users')->insert([
             'name' => Str::random(30),
             'nickname' => Str::random(30),
-            'email' => Str::random(30) . '@example.com',
-            'password' => Hash::make('password'),
+            'email' => Str::random(30) . '@example.com', 
+            'password' => Hash::make('Aa1234'),
             'role' => 'admin',
         ]);
 
         DB::table('users')->insert([
             'name' => Str::random(30),
             'nickname' => Str::random(30),
-            'email' => Str::random(30) . '@example.com',
-            'password' => Hash::make('password'),
+            'email' => Str::random(30) . '@example.com', 
+            'password' => Hash::make('Aa1234'),
         ]);
     }
 }
