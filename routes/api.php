@@ -73,8 +73,7 @@ Route::delete('/room-user', [Room_userController::class, 'deleteRoomUser']);
 Route::group([
     'middleware' => ['auth:sanctum']
 ], function () {
-Route::get('/messages', [MessageController::class, 'roomChat']);
-Route::get('/message', [MessageController::class, 'getMessage']);
+Route::get('/messages', [MessageController::class, 'roomChat']); 
 Route::post('/message', [MessageController::class, 'createMessage']);
 Route::put('/message', [MessageController::class, 'updatedMessage']);
 Route::delete('/message', [MessageController::class, 'deleteMessage']);

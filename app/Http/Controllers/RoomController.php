@@ -133,8 +133,7 @@ class RoomController extends Controller
                     [
                         "success" => true,
                         "message" => "Room updated",
-                        "data" => $room,
-                        "patata" => $userRoom
+                        "data" => $room 
                     ],
                     Response::HTTP_OK
                 );

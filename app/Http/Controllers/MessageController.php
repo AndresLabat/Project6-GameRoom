@@ -15,7 +15,7 @@ class MessageController extends Controller
     public function roomChat(Request $request)
     {
         try {
-            
+
             $user = auth()->user();
             $room_id = $request->input('room_id');
             $user_room = Room_user::query()->where('user_id', $user->id)->where('room_id', $room_id)->first();
@@ -46,7 +46,7 @@ class MessageController extends Controller
                 [
                     "success" => true,
                     "message" => "Room chat obtained succesfully",
-                    // "data" =>  $user_room
+                    "data" =>  $roomChat
                 ],
                 Response::HTTP_OK
             );
@@ -107,5 +107,92 @@ class MessageController extends Controller
         }
     }
 
+    public function deleteMessage(Request $request)
+    {
+        try {
+            $user = auth()->user();
+            $room_id = $request->input('room_id');
+            $message = $request->input('message');
 
+            $user_room = Message::query()->where('user_id', $user->id)->where('room_id', $room_id)->where('message', $message)->first();
+
+            if (!$user_room) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "This message does not exist"
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+
+            Message::destroy($user_room->id);
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Message deleted succesfully",
+                    "data" => $message
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error obtaining a chat room"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+
+    public function updatedMessage(Request $request)
+    {
+        try {
+            $user = auth()->user();
+            $room_id = $request->input('room_id');
+            $message = $request->input('message');
+            $newMessage = $request->input('newMessage');
+
+            $text = Message::query()->where('user_id', $user->id)->where('room_id', $room_id)->where('message', $message)->first();
+
+            if (!$text) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "This message does not exist"
+                    ],
+                    Response::HTTP_OK
+                );
+            } 
+
+            if ($request->has('message')) {
+                $text->message = $newMessage;
+            }
+
+            $text->save();
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "Message updated succesfully",
+                    "data" => $text
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error updating a message"
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
 }
