@@ -47,7 +47,7 @@ class Super_adminController extends Controller
                 [
                     "name" => $request->input('name'),
                     "category" => $request->input('category'),
-                    "user_id" => $request->input('user_id')
+                    "user_id" => $user->id
                 ]
             );
 

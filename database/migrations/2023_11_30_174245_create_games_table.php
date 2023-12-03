@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name', 100)->unique()->nullable(false);
             $table->enum('category', ["action", "RPG", "shooter", "adventure"]);
             $table->unsignedBigInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users")->constrained()->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
