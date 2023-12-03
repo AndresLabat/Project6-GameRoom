@@ -60,7 +60,6 @@ class Room_userController extends Controller
         }
     }
 
-
     public function getRoomsUser(Request $request)
     {
         try {
@@ -154,20 +153,55 @@ class Room_userController extends Controller
             );
         }
     }
-}
-    // public function updateRoomUser(Request $request, $id){
-    //     try {
-     
-    //     } catch (\Throwable $th) {
-           
-    //     }
-    // }
 
-    // public function deleteRoomUser(Request $request, $id){
-    //     try {
-     
-    //     } catch (\Throwable $th) {
-           
-    //     }
-    // }
-// }
+    public function deleteRoomUser(Request $request)
+    {
+        try {
+            $user_id = $request->input('user_id');
+            $room_id = $request->input('room_id');
+
+            $user = auth()->user();
+            $room_user = Room_user::query()->where('room_id', $room_id)->first();
+
+            if (!$room_user) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "This room does not exist"
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+
+            if ($room_user->user_id != $user->id) {
+                return response()->json(
+                    [
+                        "success" => true,
+                        "message" => "You aren't an owner of this room"
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+            $user_data = Room_user::query()->where('user_id', $user_id)->where('room_id', $room_id)->first();
+            Room_user::destroy($user_data->id);
+
+            return response()->json(
+                [
+                    "success" => true,
+                    "message" => "User member deleted succesfully"
+                ],
+                Response::HTTP_OK
+            );
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return response()->json(
+                [
+                    "success" => false,
+                    "message" => "Error can't deleting a member to the room "
+                ],
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Room_user",
+    "dateExported": "2023-12-03T17:54:22.486Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1edc3915-23a2-448b-97e8-752b280e3278",
+            "colId": "5315917f-95d2-424b-9d31-51ea172bd72e",
+            "containerId": "",
+            "name": "MembersRoom",
+            "url": "http://localhost:8000/api/members-room/15",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-12-03T15:38:42.044Z",
+            "modified": "2023-12-03T15:38:42.044Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "9|qi9nIgFOamljE6iDSKffKT9VZvZnSlvchGJa5hg566d755cc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a140d21f-72b1-4a13-a36b-90f7148ab4d9",
+            "colId": "5315917f-95d2-424b-9d31-51ea172bd72e",
+            "containerId": "",
+            "name": "RoomsMember",
+            "url": "http://localhost:8000/api/rooms-user",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-12-03T16:21:30.273Z",
+            "modified": "2023-12-03T16:21:30.273Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cdd40ad7-5427-49fb-8e7e-b5e57f460c79",
+            "colId": "5315917f-95d2-424b-9d31-51ea172bd72e",
+            "containerId": "",
+            "name": "AddMemberRoom",
+            "url": "http://localhost:8000/api/room-user",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-12-03T17:12:47.804Z",
+            "modified": "2023-12-03T17:37:29.276Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user_id\": 13,\n  \"room_id\": 15\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "19|dFoDYf9by7r7tXDPllkrjfLJiQ4faif0DLP4g7iMc88af010"
+            },
+            "tests": []
+        },
+        {
+            "_id": "911f4a31-30cc-4222-a7de-d56681a83d8b",
+            "colId": "5315917f-95d2-424b-9d31-51ea172bd72e",
+            "containerId": "",
+            "name": "DeleteMemberRoom",
+            "url": "http://localhost:8000/api/room-user",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-12-03T17:13:36.083Z",
+            "modified": "2023-12-03T17:45:05.443Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user_id\": 10,\n  \"room_id\": 15\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "23|xFDa0PVSduHxh4rcgU7CrRGi7gdZp0qHSlORKRlw90268d01"
+            },
+            "tests": []
+        }
+    ]
+}

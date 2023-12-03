@@ -65,7 +65,6 @@ Route::group([
 Route::get('/members-room/{id}', [Room_userController::class, 'getMembersRoom']);
 Route::get('/rooms-user', [Room_userController::class, 'getRoomsUser']);
 Route::post('/room-user', [Room_userController::class, 'createRoomUser']);
-Route::put('/room-user', [Room_userController::class, 'updateRoomUser']);
 Route::delete('/room-user', [Room_userController::class, 'deleteRoomUser']);
 });
 
