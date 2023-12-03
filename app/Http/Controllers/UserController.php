@@ -69,7 +69,6 @@ class UserController extends Controller
     public function deleteUser()
     {
         try {
-            
             $token = auth()->user();
             User::destroy($token->id);
 
