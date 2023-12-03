@@ -15,8 +15,8 @@ class Game extends Model
 
     protected $fillable = [
         'name',
-        'category', 
-        'timestamps',
+        'category',
+        'user_id'
     ]; 
 
     public function user(): BelongsTo
