@@ -38,7 +38,7 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
     <li>🚀 <a href="#deploy">Deploy</a></li>
     <li>🍃 <a href="#ramas-del-repositorio">Ramas del repositorio</a></li>
     <li>🚧 <a href="#problemas-y-soluciones">Problemas y soluciones</a></li>
-    <li>🚧 <a href="#importar-endpoints-con-thunder">Problemas y soluciones</a></li>
+    <li>📁<a href="#importar-endpoints-con-thunder">Importar endpoints con thunder</a></li>
     <li>📦 <a href="#instrucciones-dockerización">Instrucciones dockerización</a></li>
     <li>🌐 <a href="#enlaces-importantes">Enlaces importantes</a></li>
     <li>⚖️ <a href="#licencia">Licencia</a></li>
@@ -593,7 +593,7 @@ GET <http://localhost:8000/api/rooms-user>
 🚀 Por el momento su único uso es en local, en el futuro se realizará el deploy.
 
 
-**## Ramas del Repositorio**
+## Ramas del Repositorio
 
 🍃 Este proyecto se ha desarrollado en las siguientes ramas:
 
@@ -662,11 +662,10 @@ GET <http://localhost:8000/api/rooms-user>
 </p>
 
 
-## Instrucciones importación endpoints Thunder
-En la carpeta **app/Http/EndpointsThunder** encontrarás todos los archivos necesarios para poder ejecutar las rutas en Thunder, recuerda importarlo en un Thunder:
+## Importar endpoints con thunder
+📁 En la carpeta **app/Http/EndpointsThunder** encontrarás todos los archivos necesarios para poder ejecutar las rutas en Thunder, recuerda importarlo en un Thunder:
 
    <div align="center">
-    <img src="img README/captura-thunder.png" style="max-width: 50%;" width="500">
     <img src="img README/guardar-thunder.gif" style="max-width: 50%;" width="500">
    </div>
 
