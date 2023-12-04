@@ -58,3 +58,12 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
 
 🎯 Dada la situación sanitaria y el trabajo remoto, la empresa desea mejorar la interacción entre los empleados. La primera fase del proyecto es crear una aplicación web LFG que permita a los usuarios registrarse, autenticarse, crear y unirse a partidas de videojuegos, así como intercambiar mensajes en un chat común. El objetivo es fomentar la socialización y compartir momentos de ocio.
 
+## Diseño de la DDBB
+
+🏗️ Se establece que solo hay un rol por usuario, y que este es el que le da los privilegios para poder usar unos endpoints determinados u otros.
+
+<p>
+   <div align="center">
+      <img src="./img README/DDBB.jpeg" style="max-width: 100%">
+   </div>    
+</p>
