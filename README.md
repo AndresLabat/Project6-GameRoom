@@ -221,4 +221,61 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
 
 </details>
 
+<details>
+<summary><h3>2. Get Game By ID</h3></summary>
+
+- **Descripción**: Obtiene un juego específico por su ID.
+- **Acceso**: Público.
+    - Obtener Juego por ID
+        
+  ```
+    GET <http://localhost:8000/api/game/{id}>
+    
+    ```
+        
+
+</details>
+
+
+### Room:
+
+<details>
+<summary><h3>1. Get Room By ID</h3></summary>
+
+- **Descripción**: Obtiene una sala por su ID.
+- **Acceso**: Solo para usuarios autenticados.
+    - Obtener Sala
+        
+        ```
+        GET <http://localhost:8000/api/room/{id}>
+        
+        ```
+        
+
+</details>
+
+<details>
+<summary><h3>2. Create Room</h3></summary>
+
+- **Descripción**: Crea una nueva sala.
+- **Acceso**: Solo para usuarios autenticados.
+    - Crear Sala
+        
+        ```
+        POST <http://localhost:8000/api/room>
+        
+        ```
+        
+        Payload:
+        
+        ```json
+        {
+            "name": "Nombre de la Sala",
+            "game_id": "ID del Juego"
+        }
+        
+        ```
+        
+
+</details>
  
