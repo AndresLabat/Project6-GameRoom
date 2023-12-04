@@ -453,4 +453,71 @@ GET <http://localhost:8000/api/rooms-user>
     ```
   
 </details>
+
+<details>
+<summary><h3>4.Update Message </h3></summary>
+
+- **Descripción**: Actualiza un mensaje seleccionado.
+- **Acceso**: Solo para usuarios autenticados e integrantes de la sala.
+    
+    ```
+    PUT <http://localhost:8000/api/message>
+    ```
+    
+    Payload:
+    
+    ```json
+    { 
+      "room_id":11,
+      "message": "Mensaje actual",
+      "newMessage": "Nuevo mensaje"
+    }
+    ```
+  
+</details>
+
+### Super Admin:
+
+<details>
+<summary><h3>1.Create Game </h3></summary>
+
+- **Descripción**: Crea un nuevo juego en la tabla.
+- **Acceso**: Solo para usuarios autenticados como super_admin.
+    
+    ```
+    POST <http://localhost:8000/api/game>
+    ```
+    
+    Payload:
+    
+    ```json
+    { 
+     "name":"Zelda",
+     "category":"adventure" 
+    }
+    ```
+  
+</details>
+
+<details>
+<summary><h3>2.Update Game </h3></summary>
+
+- **Descripción**: Actualiza un juego en la tabla.
+- **Acceso**: Solo para usuarios autenticados como super_admin.
+    
+    ```
+    PUT <http://localhost:8000/api/game/{id}>
+    ```
+    
+    Payload:
+    
+    ```json
+    { 
+     "name":"Nombre del juego",
+     "category":"adventure",
+     "user_id":13
+    }
+    ```
+  
+</details>
  
