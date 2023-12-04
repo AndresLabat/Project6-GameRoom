@@ -38,6 +38,7 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
     <li>🚀 <a href="#deploy">Deploy</a></li>
     <li>🍃 <a href="#ramas-del-repositorio">Ramas del repositorio</a></li>
     <li>🚧 <a href="#problemas-y-soluciones">Problemas y soluciones</a></li>
+    <li>🚧 <a href="#importar-endpoints-con-thunder">Problemas y soluciones</a></li>
     <li>📦 <a href="#instrucciones-dockerización">Instrucciones dockerización</a></li>
     <li>🌐 <a href="#enlaces-importantes">Enlaces importantes</a></li>
     <li>⚖️ <a href="#licencia">Licencia</a></li>
@@ -586,9 +587,11 @@ GET <http://localhost:8000/api/rooms-user>
 
 </details>
 
+
 ## Deploy
 
 🚀 Por el momento su único uso es en local, en el futuro se realizará el deploy.
+
 
 **## Ramas del Repositorio**
 
@@ -612,6 +615,8 @@ GET <http://localhost:8000/api/rooms-user>
 
 9.- **Readme**: es la última rama, se creó únicamente para crear este README.
 
+
+
 ## Problemas y Soluciones
 
 ### 1. Una gran cantidad de endpoints fallaban por un error 500 sin aparente conexión entre ellos.
@@ -619,6 +624,18 @@ GET <http://localhost:8000/api/rooms-user>
 - **🚧Problema**: Este error 500 nos decía que era un tipo de error de servidor y nos ocurría en practicamente todos los controladores de tablas intermedias.
 
    - **💡Solución**: Revisar los modelos y percatarnos de que no estabamos incluyendo las foreign keys en ellos, por lo que no reconocía las request como válidas, también fue importante en el caso de los endpoints de messages el revisar las importaciones de dichos modelos en el archivo api.php.
+
+   <p>
+
+   <div align="center">
+    <img src="img README/error500-room.gif" style="max-width: 70%;" width="500">
+   </div>
+
+   <div align="center">
+    <em><b>Error 500 al añadir a un miembro nuevo a una sala</b></em>
+   </div>
+
+</p>
 
 ### 2. Imposibilidad de eliminar usuarios de la tabla una vez realizados los seeders que rellenan toda la base de datos.
 
@@ -635,18 +652,24 @@ GET <http://localhost:8000/api/rooms-user>
 <p>
 
    <div align="center">
-
-      <img src="img README/many-to-one.jpeg" style="max-width: 100%;" width="500">
-
+    <img src="img README/error500.gif" style="max-width: 70%;" width="500">
    </div>
 
    <div align="center">
-
-      <em><b>Descripción de la foto</b></em>
-
+    <em><b>Error 500 al intentar eliminar un usuario</b></em>
    </div>
 
 </p>
+
+
+## Instrucciones importación endpoints Thunder
+En la carpeta **app/Http/EndpointsThunder** encontrarás todos los archivos necesarios para poder ejecutar las rutas en Thunder, recuerda importarlo en un Thunder:
+
+   <div align="center">
+    <img src="img README/captura-thunder.png" style="max-width: 50%;" width="500">
+    <img src="img README/guardar-thunder.gif" style="max-width: 50%;" width="500">
+   </div>
+
 
 ## Instrucciones Dockerización
 
@@ -655,7 +678,7 @@ GET <http://localhost:8000/api/rooms-user>
 1. **Clonar el Repositorio:**
 
     ```bash
-
+    
     git clone <https://github.com/AndresLabat/Project6-GameRoom.git>
 
     ```
@@ -753,19 +776,19 @@ Espero que disfrutes explorando y utilizando este backend de nuestra Gameroom. S
 
 ```
 
-- **Vincenzo Donnarumma***
+- **Vincenzo Donnarumma**
 
 <a href = "[mailto:](mailto:vincenzodonnarumma22@gmail.com)(mailto:vincenzodonnarumma22@gmail.com)"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 
 <a href="https://github.com/vincenzo2202" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
 
-- **Andrés Labat***
+- **Andrés Labat**
 
 <a href = "[mailto:andreslabat89@gmail.com](mailto:andreslabat89@gmail.com)"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 
 <a href="https://github.com/AndresLabat" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
 
-- **Bienve Ladrón***
+- **Bienve Ladrón**
 
 <a href = "[mailto:ladronbravovlc@gmail.com](mailto:ladronbravovlc@gmail.com)"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 
@@ -780,9 +803,7 @@ Espero que disfrutes explorando y utilizando este backend de nuestra Gameroom. S
 <p>
 
    <div align="center">
-
-      <img src="img README/geekhubs-con-fondo.png" style="max-width: 100%;" width="250">
-
+    <img src="img README/geekhubs-con-fondo.png" style="max-width: 100%;" width="250">
    </div>
 
 </p>
