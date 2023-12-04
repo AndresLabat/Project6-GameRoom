@@ -278,4 +278,57 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
         
 
 </details>
+
+<details>
+<summary><h3>3. Update Room</h3></summary>
+
+- **Descripción**: Actualiza una sala existente.
+- **Acceso**: Solo para usuarios autenticados y propietarios de la sala.
+    - Actualizar Sala
+        
+        ```
+        PUT <http://localhost:8000/api/room/{id}>
+        ```
+        
+        Payload:
+        
+        ```json
+        {
+            "name": "Nuevo Nombre de la Sala",
+            "game_id": "Nuevo ID del Juego"
+        }
+        ```
+        
+
+</details>
+
+<details>
+<summary><h3>4. Delete Room</h3></summary>
+
+- **Descripción**: Elimina una sala existente.
+- **Acceso**: Solo para usuarios autenticados y propietarios de la sala.
+
+    ```
+    DELETE <http://localhost:8000/api/room/{id}>
+    ```
+        
+
+</details>
+
+
+### Room_User:
+
+<details>
+<summary><h3>1. Rooms Member</h3></summary> 
+
+- **Descripción**: Obtiene los miembros de una sala por su ID.
+- **Acceso**: Solo para usuarios autenticados y miembros de la sala.
+- Obtener Miembros de la Sala
+
+```
+GET <http://localhost:8000/api/members-room/{id}>
+```
+
+</summary>
+</details>
  
