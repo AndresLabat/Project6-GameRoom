@@ -715,3 +715,24 @@ La aplicación estará disponible en [http://localhost](http://localhost/).
 - **[Documentación de Laravel](https://laravel.com/docs)**
 - **[laravel/passport Documentation](https://laravel.com/docs/8.x/passport)**
 - **[GeeksHubs Academy](https://www.geekshubsacademy.com/)**
+
+
+## Licencia
+
+⚖️ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más información.
+
+## Cómo Contribuir
+
+🤝 Si deseas contribuir a este proyecto, puedes realizar un fork del repositorio en GitHub, hacer tus cambios y enviar una solicitud de extracción (pull request). Tu contribución será revisada y, si es apropiada, se fusionará con la rama principal.
+
+1. Haz un fork de este repositorio.
+
+2. Crea una nueva rama para tu contribución: `git checkout -b tu-nueva-caracteristica`.
+
+3. Realiza tus cambios y commitea: `git commit -m "Añade una nueva característica"`.
+
+4. Envía tus cambios al repositorio: `git push origin tu-nueva-caracteristica`.
+
+5. Crea una solicitud de extracción en GitHub.
+
+Espero que disfrutes explorando y utilizando este backend de nuestra Gameroom. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros a través de la información de contacto proporcionada.
