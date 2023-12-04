@@ -98,5 +98,62 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
         
         ```
         
+
+</details>
+
+<details>
+<summary><h3>2. Login</h3></summary>
+
+- **Descripción**: Inicia sesión de un usuario existente.
+- **Acceso**: Público.
+- **Validaciones**: Verifica la validez del correo electrónico y la contraseña del usuario.
+    - Iniciar Sesión
+        
+        ```
+        POST <http://localhost:8000/api/login>
+        
+        ```
+        
+        Payload:
+        
+        ```json
+        {
+            "email": "correo@ejemplo.com",
+            "password": "contraseña"
+        }
+        
+        ```
+        
+
+</details>
+
+<details>
+<summary><h3>3. Profile</h3></summary>
+
+- **Descripción**: Obtiene el perfil del usuario autenticado.
+- **Acceso**: Solo para usuarios autenticados.
+    - Obtener Perfil
+        
+        ```
+        GET <http://localhost:8000/api/profile>
+        
+        ```
+        
+
+</details>
+
+<details>
+<summary><h3>4. Logout</h3></summary>
+
+- **Descripción**: Cierra la sesión del usuario autenticado.
+- **Acceso**: Solo para usuarios autenticados.
+    - Cerrar Sesión
+        
+        ```
+        POST <http://localhost:8000/api/logout>
+        
+        ```
+        
+
 </details>
  
