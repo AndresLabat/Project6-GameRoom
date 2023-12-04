@@ -589,3 +589,61 @@ GET <http://localhost:8000/api/rooms-user>
 ## Deploy
 
 🚀 Por el momento su único uso es en local, en el futuro se realizará el deploy.
+
+**## Ramas del Repositorio**
+
+🍃 Este proyecto se ha desarrollado en las siguientes ramas:
+
+1.- **Master**: considerada como la rama principal, en ella únicamente se ha iniciado y finalizado el proyecto para poder hacer el deploy.
+
+2.- **Dev**: es la rama sobre la que pivotan todas las features.
+
+3.- **Middleware**: aquí procedimos a la creación de los middlewares necesarios para la aplicación, en este caso IsSuperAdmin y el Auth:Sanctum.
+
+4.- **UserController**: contiene la creación y testeo de todos los endpoints del usuario.
+
+5.- **GameController**: compuesta por los commits que hacen referencia a los endpoints de la tabla "games".
+
+6.- **MessageController**: abarca la creación y comprobación de los controladores de la tabla intermedia "messages".
+
+7.- **SuperAdminController**: únicamente se han realizado aquí los endpoints a los que pueden acceder los usuarios con role super admin.
+
+8.- **Room_userController**: en esta rama se crearon los controladores de la tabla "room_user"
+
+9.- **Readme**: es la última rama, se creó únicamente para crear este README.
+
+## Problemas y Soluciones
+
+### 1. Una gran cantidad de endpoints fallaban por un error 500 sin aparente conexión entre ellos.
+
+- **🚧Problema**: Este error 500 nos decía que era un tipo de error de servidor y nos ocurría en practicamente todos los controladores de tablas intermedias.
+
+   - **💡Solución**: Revisar los modelos y percatarnos de que no estabamos incluyendo las foreign keys en ellos, por lo que no reconocía las request como válidas, también fue importante en el caso de los endpoints de messages el revisar las importaciones de dichos modelos en el archivo api.php.
+
+### 2. Imposibilidad de eliminar usuarios de la tabla una vez realizados los seeders que rellenan toda la base de datos.
+
+- **🚧Problema**: Comprobando el correcto funcionamiento de los endpoints, una vez finalizados todos los controladores, nos encontramos ante un error de tipo 500 en el caso de querer eliminar un usuario de nuestra tabla principal "users".
+
+   - **💡Solución**: Añadir en las migraciónes en la parte de código que hace referencia a todas las foreign keys que estas debían tener la propiedad constrained y además que pudieran realizarse los deletes en cascade.
+
+   ```js
+
+   ->constrained()->onDelete('cascade')
+
+   ```
+
+<p>
+
+   <div align="center">
+
+      <img src="img README/many-to-one.jpeg" style="max-width: 100%;" width="500">
+
+   </div>
+
+   <div align="center">
+
+      <em><b>Descripción de la foto</b></em>
+
+   </div>
+
+</p>
