@@ -389,4 +389,68 @@ GET <http://localhost:8000/api/rooms-user>
     ```
   
 </details>
+
+### Message:
+
+<details>
+<summary><h3>1. Create Message </h3></summary>
+
+- **Descripción**: Crear un nuevo mensaje a un chat existente.
+- **Acceso**: Solo para usuarios autenticados e integrantes de la sala.
+    
+    ```
+    POST <http://localhost:8000/api/message>
+    ```
+    
+    Payload:
+    
+    ```json
+    { 
+      "room_id": 1,
+      "message":"Mensaje que quieras introducir"
+    }
+    ```
+  
+</details>
+
+<details>
+<summary><h3>2.Room Chat </h3></summary>
+
+- **Descripción**: Obtiene los mensajes de un chat existente.
+- **Acceso**: Solo para usuarios autenticados e integrantes de la sala.
+    
+    ```
+    GET <http://localhost:8000/api/messages>
+    ```
+    
+    Payload:
+    
+    ```json
+    { 
+      "room_id": 1 
+    }
+    ```
+  
+</details>
+
+<details>
+<summary><h3>3.Delete Message </h3></summary>
+
+- **Descripción**: Elimina un mensaje seleccionado.
+- **Acceso**: Solo para usuarios autenticados e integrantes de la sala.
+    
+    ```
+    DELETE <http://localhost:8000/api/messages>
+    ```
+    
+    Payload:
+    
+    ```json
+    { 
+      "room_id": 1 ,
+      "message": "Mensaje a eliminar"
+    }
+    ```
+  
+</details>
  
