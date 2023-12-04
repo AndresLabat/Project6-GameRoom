@@ -556,4 +556,36 @@ GET <http://localhost:8000/api/rooms-user>
     ``` 
   
 </details>
- 
+
+
+## Tecnologías Utilizadas
+
+<details>
+
+<summary>🔧 Tecnologías</summary>
+
+- **Php**: es el lenguaje de programación sobre el que se han montado el servidor y los distintos endpoints.
+
+  <code><img width="7%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRJd09nbs-FMm0CO_8S31bN5HswUV2Tc5wvA&usqp=CAU"></code>
+
+- **Laravel**: Diseñado para facilitar y agilizar el desarrollo de aplicaciones web, Laravel sigue el patrón de arquitectura MVC (Modelo-Vista-Controlador) y ofrece numerosas características y herramientas que permiten a los desarrolladores crear aplicaciones robustas y escalables de manera eficiente..
+
+<code><img width="11%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbHRR7WD7dsTO-WjMevpojc9ZQxn4TEdl5dA&usqp=CAU"></code>
+
+- **MySQL**: Es el sistema de gestión de bases de datos sobre el que se han construido las tablas en SQL.
+
+ <code><img width="10%" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"></code>
+
+- **Git**: Sistema de control de versiones para el seguimiento de cambios en el proyecto.
+
+  <code><img width="10%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"></code>
+
+- **GitHub**: Plataforma para alojar el repositorio en línea y colaborar en el desarrollo del proyecto.
+
+    <code><img width="6%" src="https://www.svgrepo.com/show/35001/github.svg"></code>
+
+</details>
+
+## Deploy
+
+🚀 Por el momento su único uso es en local, en el futuro se realizará el deploy.
