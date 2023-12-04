@@ -331,4 +331,62 @@ GET <http://localhost:8000/api/members-room/{id}>
 
 </summary>
 </details>
+
+<details>
+<summary><h3>2. Get Rooms Member</h3></summary> 
+
+- **Descripción**: Obtiene las salas del usuario autenticado.
+- **Acceso**: Solo para usuarios autenticados.
+- Obtener Salas del Usuario
+
+```
+GET <http://localhost:8000/api/rooms-user>
+```
+
+</summary>
+</details>
+
+<details>
+<summary><h3>3.  Delete Member Room</h3></summary>
+
+- **Descripción**: Eliminar un usuario a una sala existente.
+- **Acceso**: Solo para usuarios autenticados y propietarios de la sala.
+- Añadir usuario
+    
+    ```
+    DELETE <http://localhost:8000/api/room-user>
+    ```
+    
+    Payload:
+    
+    ```json
+    {
+      "user_id": "Número de user_id",
+      "room_id": "Número de room_id"
+    }
+    ```  
+    
+</details>
+
+<details>
+<summary><h3>4. Add Member to room </h3></summary>
+
+- **Descripción**: Añadir un usuario a una sala existente.
+- **Acceso**: Solo para usuarios autenticados y propietarios de la sala.
+- Añadir usuario
+    
+    ```
+    POST <http://localhost:8000/api/room-user>
+    ```
+    
+    Payload:
+    
+    ```json
+    {
+      "user_id": "Número de user_id",
+      "room_id": "Número de room_id"
+    }
+    ```
+  
+</details>
  
