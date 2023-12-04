@@ -736,3 +736,55 @@ La aplicación estará disponible en [http://localhost](http://localhost/).
 5. Crea una solicitud de extracción en GitHub.
 
 Espero que disfrutes explorando y utilizando este backend de nuestra Gameroom. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros a través de la información de contacto proporcionada.
+
+## Contacto
+
+📧 Para cualquier pregunta o comentario, no dudes en ponerte en contacto:
+
+``` js
+
+ const developer1 = "Andrés Labat";
+
+ const developer2 = "Vincenzo Donnaruma";
+
+ const developer3 = "Bienvenida Ladrón";
+
+ console.log("Desarrollado por: " + developer1 + developer2 + developer3);
+
+```
+
+- **Vincenzo Donnarumma***
+
+<a href = "[mailto:](mailto:vincenzodonnarumma22@gmail.com)(mailto:vincenzodonnarumma22@gmail.com)"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
+<a href="https://github.com/vincenzo2202" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
+
+- **Andrés Labat***
+
+<a href = "[mailto:andreslabat89@gmail.com](mailto:andreslabat89@gmail.com)"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
+<a href="https://github.com/AndresLabat" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
+
+- **Bienve Ladrón***
+
+<a href = "[mailto:ladronbravovlc@gmail.com](mailto:ladronbravovlc@gmail.com)"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
+<a href="https://github.com/ladronbx" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
+
+- *Fecha de Comienzo del Proyecto**: 30/11/2023
+
+## Agradecimientos
+
+👏 Agradecimentos a GeeksHubs Academy por los conocimientos que hemos podido adquirir a lo largo de todo el curso y que han hecho posible este proyecto, y a nuestros queridos profesores David Ochando y Dani Tarazona y su gran paciencia con nosotros.
+
+<p>
+
+   <div align="center">
+
+      <img src="img README/geekhubs-con-fondo.png" style="max-width: 100%;" width="250">
+
+   </div>
+
+</p>
+
+¡Gracias por visitar **GameRoom Backend** y explorar nuestro proyecto!
