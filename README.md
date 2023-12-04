@@ -520,4 +520,40 @@ GET <http://localhost:8000/api/rooms-user>
     ```
   
 </details>
+
+<details>
+<summary><h3>3.Delete Game </h3></summary>
+
+- **Descripción**: Actualiza un juego en la tabla.
+- **Acceso**: Solo para usuarios autenticados como super_admin.
+    
+    ```
+    DELETE <http://localhost:8000/api/game/{id}>
+    ```
+       
+</details>
+
+<details>
+<summary><h3>4.Get All Rooms </h3></summary>
+
+- **Descripción**: Obtiene todas las salas existentes.
+- **Acceso**: Solo para usuarios autenticados como super_admin.
+    
+    ```
+    GET <http://localhost:8000/api/rooms>
+    ``` 
+  
+</details>
+
+<details>
+<summary><h3>5.Get All Users </h3></summary>
+
+- **Descripción**: Obtiene todos los ususarios de la aplicación.
+- **Acceso**: Solo para usuarios autenticados como super_admin.
+    
+    ```
+    GET <http://localhost:8000/api/rooms>
+    ``` 
+  
+</details>
  
