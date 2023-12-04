@@ -156,4 +156,69 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
         
 
 </details>
+
+### User:
+
+<details>
+
+<summary><h3>1. Update</h3></summary>
+
+- **Descripción**: Actualiza el perfil del usuario autenticado.
+- **Acceso**: Solo para usuarios autenticados.
+    - Actualizar Perfil
+        
+        ```
+        POST <http://localhost:8000/api/user>
+        
+        ```
+        
+        Payload:
+        
+        ```json
+        {
+            "name": "Nuevo Nombre",
+            "nickname": "Nuevo Apodo",
+            "email": "nuevo_correo@ejemplo.com",
+            "password": "nueva_contraseña",
+            "photo": "nueva_url_de_la_foto"
+        }
+        
+        ```
+        
+
+</details>
+
+<details>
+<summary><h3>2. Delete User</h3></summary>
+
+- **Descripción**: Elimina el usuario autenticado.
+- **Acceso**: Solo para usuarios autenticados.
+    - Eliminar Usuario
+        
+        ```
+        DELETE <http://localhost:8000/api/user>
+        
+        ```
+        
+
+</details>
+
+
+### Game:
+
+<details>
+<summary><h3>1. Get All Games</h3></summary>
+
+- **Descripción**: Obtiene todos los juegos.
+- **Acceso**: Público.
+    - Obtener Todos los Juegos
+        
+        ```
+        GET <http://localhost:8000/api/games>
+        
+        ```
+        
+
+</details>
+
  
