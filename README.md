@@ -647,3 +647,71 @@ GET <http://localhost:8000/api/rooms-user>
    </div>
 
 </p>
+
+## Instrucciones Dockerización
+
+📦 Para facilitar la implementación y ejecución del proyecto, se proporcionan instrucciones de Dockerización:
+
+1. **Clonar el Repositorio:**
+
+    ```bash
+
+    git clone <https://github.com/AndresLabat/Project6-GameRoom.git>
+
+    ```
+
+2. **Acceder al Directorio del Proyecto:**
+
+    ```bash
+
+    cd Project6-GameRoom
+
+    ```
+
+3. **Configuración de Variables de Entorno:**
+
+Crear un archivo `.env` basado en el ejemplo `.env.example` y configurar las variables de entorno necesarias.
+
+4. **Construir y Levantar Contenedores:**
+
+    ```bash
+
+    docker-compose up -d --build
+
+    ```
+
+5. **Instalar Dependencias de Laravel:**
+
+    ```bash
+
+    docker-compose exec app composer install
+
+    ```
+
+6. **Generar Clave de Laravel:**
+
+    ```bash
+
+    docker-compose exec app php artisan key:generate
+
+    ```
+
+7. **Ejecutar Migraciones y Seeders:**
+
+    ```bash
+
+    docker-compose exec app php artisan migrate --seed
+
+    ```
+
+8. **Acceder a la Aplicación:**
+
+La aplicación estará disponible en [http://localhost](http://localhost/).
+
+## Enlaces Importantes
+
+🌐 Mediante estos enlaces puedes acceder a ellos:
+
+- **[Documentación de Laravel](https://laravel.com/docs)**
+- **[laravel/passport Documentation](https://laravel.com/docs/8.x/passport)**
+- **[GeeksHubs Academy](https://www.geekshubsacademy.com/)**
