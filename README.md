@@ -48,3 +48,8 @@ Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academ
   </ol>
 
 </details>
+
+
+## Introducción
+
+🚀 El planteamiento para desarrollar este proyecto consiste en desarrollar una estructura Backend completa (DDBB+PHP+Laravel) para una aplicación web LFG (Looking for Group), que permita a los empleados contactar entre ellos para formar grupos y jugar videojuegos como actividad de ocio afterwork.
